@@ -4,7 +4,7 @@ Licensed under the MIT: http://www.opensource.org/licenses/mit-license.php
 
 handicraft_ujs is a jQuery replacement for Prototype/script.aculo.us on Rails, and it's unobtrusive and accessible.
 
-== some example
+== some usage example
 
 1.
 
@@ -23,3 +23,8 @@ becomes
 form_for item , :url => item_path(item) , :html => { :method => :put, :class => 'h-put' }
 
 more example please see http://github.com/ihower/handicraft-interfaces
+
+== thanks
+
+* http://blog.lawrencepit.com/2008/09/04/unobtrusive-jquery-rails/
+* http://ennerchi.com/projects/jrails
