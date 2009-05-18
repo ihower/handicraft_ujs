@@ -20,7 +20,7 @@ remote_form_for item , :url => item_path(item) , :html => {:method => :put}
 
 becomes
 
-form_for item , :url => item_path(item) , :html => { :method => :put, :class => 'h-put' }
+form_for item ,item_path(item) , :html => { :method => :put, :class => 'h-put' }
 
 more example please see http://github.com/ihower/handicraft-interfaces
 
