@@ -31,17 +31,16 @@
         });
 
         $("a.h-post, a.h-put, a.h-delete").live("click", function(e) {
-            var method = $(e.target).attr("class").match(/h-(post|put|delete)/i)[1].toLowerCase();
-            var $el = $(e.target);
-
-            if ($el.metadata().confirm && !confirm($el.metadata().confirm)) return false;
-
-            if ( $el.metadata().callback ) {
-                $.post($el.attr('href'), "_method=" + method, eval( $el.metadata().callback ), 'json');
+            var method = $(this).attr('class').match(/h-(post|put|delete)/i)[1].toLowerCase();
+            var meta = $(this).metadata();
+            if (meta.confirm && !confirm(meta.confirm)) {
+                return false;
+            };
+            if (meta.callback) {
+                $.post(this.href, "_method=" + method, eval(meta.callback), 'json');
             } else {
-                $.post($el.attr('href'), "_method=" + method, null, 'script');
+                $.post(this.href, "_method=" + method, null, 'script');
             }
-
             return false;
         });
 
